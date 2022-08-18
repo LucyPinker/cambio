@@ -1,0 +1,17 @@
+<h1> Listing index </h1>
+<ul>
+<% @listings.each do |listing| %>
+  <li>
+> <%= listing.location %> -
+<%= listing.start_date %> -
+<%= listing.end_date%> -
+<%= listing.house_type%> -
+<%= listing.pets%> -
+<%= listing.plants%> -
+<%= listing.bedrooms%> bedrooms -
+<%= listing.guests%> guests
+<%= link_to "See more", listing_path(listing)%>
+</li>
+<% end %>
+</ul>
+<%= link_to "home", root_path %>
