@@ -1,0 +1,12 @@
+.listings{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.listing{
+color: pink;
+background-color: blueviolet;
+padding: 15px;
+margin: 20px;
+list-style: none;
+}

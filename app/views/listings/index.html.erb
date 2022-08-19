@@ -1,17 +1,18 @@
-<h1> Listing index </h1>
-<ul>
-<% @listings.each do |listing| %>
-  <li>
-> <%= listing.location %> -
-<%= listing.start_date %> -
-<%= listing.end_date%> -
-<%= listing.house_type%> -
-<%= listing.pets%> -
-<%= listing.plants%> -
-<%= listing.bedrooms%> bedrooms -
-<%= listing.guests%> guests
-<%= link_to "See more", listing_path(listing)%>
-</li>
-<% end %>
+<h1> Available swaps </h1>
+<h2>You are seeing listings in specified place...</h1>
+
+<ul class="listings">
+  <% @listings.each do |listing| %>
+    <li class="listing">
+      <%= listing.location %> -
+      <%= listing.start_date %> -
+      <%= listing.end_date%> -
+      <%= listing.house_type%> -
+      <%= listing.pets%> -
+      <%= listing.plants%> -
+      <%= listing.bedrooms%> bedrooms -
+      <%= listing.guests%> guests
+      <%= link_to "See more", listing_path(listing)%>
+    </li>
+  <% end %>
 </ul>
-<%= link_to "home", root_path %>
