@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://cdn0.iconfinder.com/data/icons/real-estate-and-homes-2/85/house_home_swap_exchange-512.png" %>
     <% end %>
 
@@ -15,7 +15,7 @@
             <%= link_to "home", root_path %>
           </li>
           <li class="nav-item">
-            <%= link_to "Dashboard", "#", class: "nav-link" %>
+            <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
           </li>
           <li>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete %>

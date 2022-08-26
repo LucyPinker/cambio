@@ -12,7 +12,17 @@
       <%= listing.plants%> -
       <%= listing.bedrooms%> bedrooms -
       <%= listing.guests%> guests
+      <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
       <%= link_to "See more", listing_path(listing)%>
+      <%= link_to "Kill it", listing_path(listing),  method: :delete, data: { confirm: "Are you sure you want to delete this list?" } %>
     </li>
   <% end %>
 </ul>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+
+<%= link_to "Add a new listing", new_listing_path%>

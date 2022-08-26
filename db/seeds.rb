@@ -1,6 +1,7 @@
 require 'faker'
 
-
+p "cleaning the database"
+Listing.destroy_all
 p 'creating 50 new users and listings'
 
 
@@ -13,18 +14,18 @@ p 'creating 50 new users and listings'
   )
   user.save!
 
-  listing = Listing.create!(
-    location: Faker::Address.city,
-    start_date: Faker::Date.in_date_period,
-    end_date: Faker::Date.in_date_period,
-    house_type: ["house", "apartment", "boat", "cabin", "tent"].sample,
-    pets: [true, false].sample,
-    plants: [true, false].sample,
-    bedrooms: rand(1..5),
-    guests: rand(1..8),
-    user: user
-  )
-  listing.save!
+  # listing = Listing.create!(
+  #   location: Faker::Address.city,
+  #   start_date: Faker::Date.in_date_period,
+  #   end_date: Faker::Date.in_date_period,
+  #   house_type: ["house", "apartment", "boat", "cabin", "tent"].sample,
+  #   pets: [true, false].sample,
+  #   plants: [true, false].sample,
+  #   bedrooms: rand(1..5),
+  #   guests: rand(1..8),
+  #   user: user
+  # )
+  # listing.save!
 end
 
 p 'Mission success!'
